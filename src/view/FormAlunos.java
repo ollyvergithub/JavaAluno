@@ -215,29 +215,40 @@ public class FormAlunos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        if (txtRgm.getText().equals("")){
-            lblMensagem.setText("Preencha o RGM do aluno");
-        }else if(txtNome.getText().equals("")){
-            lblMensagem.setText("Preencha o Nome do aluno");
-        }else if(txtNota1.getText().equals("")){
-            lblMensagem.setText("Preencha a Nota1");
-        }else if(txtNota2.getText().equals("")){
-            lblMensagem.setText("Preencha a Nota2");
-        }else{
-            Aluno aluno = montaAluno();
-            //String resp = new AlunoDAO().gravaAluno(aluno);
-            String resp = new AlunoDao().gravaAluno(aluno);
+        
+        Aluno aluno_existente = new AlunoDao().getAluno(txtRgm.getText());
+        System.out.println("Aluno Existente " + aluno_existente);
+        
+        if (aluno_existente == null){
             
-            if(resp.equals("OK")){
-                lblMensagem.setText("Aluno incluído com sucesso");
-                txtRgm.setText("");
-                txtNome.setText("");
-                txtNota1.setText("");
-                txtNota2.setText("");
+            if (txtRgm.getText().equals("")){
+                lblMensagem.setText("Preencha o RGM do aluno");
+            }else if(txtNome.getText().equals("")){
+                lblMensagem.setText("Preencha o Nome do aluno");
+            }else if(txtNota1.getText().equals("")){
+                lblMensagem.setText("Preencha a Nota1");
+            }else if(txtNota2.getText().equals("")){
+                lblMensagem.setText("Preencha a Nota2");
             }else{
-                lblMensagem.setText("" + resp);
+                Aluno aluno = montaAluno();
+                //String resp = new AlunoDAO().gravaAluno(aluno);
+                String resp = new AlunoDao().gravaAluno(aluno);
+
+                if(resp.equals("OK")){
+                    lblMensagem.setText("Aluno incluído com sucesso");
+                    txtRgm.setText("");
+                    txtNome.setText("");
+                    txtNota1.setText("");
+                    txtNota2.setText("");
+                }else{
+                    lblMensagem.setText("" + resp);
+                }
             }
+        }else{
+            lblMensagem.setText("Esse usuário já existe!! Tente novamente");
         }
+        
+
         
         btnCalcular.setEnabled(false);
         btnAlterar.setEnabled(false);
