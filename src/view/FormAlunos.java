@@ -51,6 +51,7 @@ public class FormAlunos extends javax.swing.JFrame {
         btnLimpar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Alunos");
@@ -59,30 +60,30 @@ public class FormAlunos extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("RGM:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 30, 60, 20);
+        jLabel1.setBounds(40, 50, 60, 20);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Nome:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 70, 70, 20);
+        jLabel2.setBounds(40, 90, 70, 20);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Nota 1:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(40, 110, 70, 20);
+        jLabel3.setBounds(40, 130, 70, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Nota 2:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(40, 150, 70, 20);
+        jLabel4.setBounds(40, 170, 70, 20);
         getContentPane().add(txtNota2);
-        txtNota2.setBounds(110, 150, 100, 20);
+        txtNota2.setBounds(110, 170, 100, 20);
         getContentPane().add(txtNome);
-        txtNome.setBounds(110, 70, 320, 20);
+        txtNome.setBounds(110, 90, 320, 20);
         getContentPane().add(txtRgm);
-        txtRgm.setBounds(110, 30, 100, 20);
+        txtRgm.setBounds(110, 50, 100, 20);
         getContentPane().add(txtNota1);
-        txtNota1.setBounds(110, 110, 100, 20);
+        txtNota1.setBounds(110, 130, 100, 20);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Mensagem"));
 
@@ -199,6 +200,11 @@ public class FormAlunos extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(480, 40, 160, 310);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setText("TODOS OS EVENTOS ESTÃO DISPONÍVEIS A PARTIR DO BOTÃO PESQUISAR");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(30, 10, 620, 17);
 
         setSize(new java.awt.Dimension(689, 405));
         setLocationRelativeTo(null);
@@ -381,6 +387,7 @@ public class FormAlunos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblMensagem;
