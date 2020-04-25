@@ -216,10 +216,10 @@ public class FormAlunos extends javax.swing.JFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         
-        Aluno aluno_existente = new AlunoDao().getAluno(txtRgm.getText());
-        System.out.println("Aluno Existente " + aluno_existente);
+        //Aluno aluno_existente = new AlunoDao().getAluno(txtRgm.getText());
+        //System.out.println("Aluno Existente " + aluno_existente);
         
-        if (aluno_existente == null){
+        //if (aluno_existente == null){
             
             if (txtRgm.getText().equals("")){
                 lblMensagem.setText("Preencha o RGM do aluno");
@@ -244,9 +244,9 @@ public class FormAlunos extends javax.swing.JFrame {
                     lblMensagem.setText("" + resp);
                 }
             }
-        }else{
-            lblMensagem.setText("Esse usuário já existe!! Tente novamente");
-        }
+        //}else{
+            //lblMensagem.setText("Esse usuário já existe!! Tente novamente");
+        //}
         
 
         

@@ -7,22 +7,30 @@ public class AlunoDao {
     
     public String gravaAluno(Aluno aluno) {
         
+        String aluno_existente =  aluno.getRgm();
+        Object obj = getAluno(aluno_existente);
+        System.out.println("Ollyver " +  obj);
         String resp = "";
-        try {
-            Connection con = Conecta.getConexao();
-            String sql = "INSERT INTO dados (rgm, nome, nota1, nota2)";
-            sql += "VALUES (?, ?, ?, ?)";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, aluno.getRgm());
-            ps.setString(2, aluno.getNome());
-            ps.setFloat(3, aluno.getNota1());
-            ps.setFloat(4, aluno.getNota2());
-            ps.execute();
-            ps.close();
-            con.close();
-            resp = "OK";
-        } catch (Exception e) {
-            resp = e.toString();
+        
+        if(obj == null){
+            try {
+                Connection con = Conecta.getConexao();
+                String sql = "INSERT INTO dados (rgm, nome, nota1, nota2)";
+                sql += "VALUES (?, ?, ?, ?)";
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setString(1, aluno.getRgm());
+                ps.setString(2, aluno.getNome());
+                ps.setFloat(3, aluno.getNota1());
+                ps.setFloat(4, aluno.getNota2());
+                ps.execute();
+                ps.close();
+                con.close();
+                resp = "OK";
+            } catch (Exception e) {
+                resp = e.toString();
+            }
+        }else {
+            resp = "Aluno já existente. Tente novamente!!";
         }
         return resp;
     }
