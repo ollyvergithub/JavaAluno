@@ -275,9 +275,11 @@ public class FormAlunos extends javax.swing.JFrame {
                 String media = new AlunoBean().calculaMedia(Float.parseFloat(txtNota1.getText()),
                 Float.parseFloat(txtNota2.getText()));
                 lblMensagem.setText(media);
+                
+                btnCalcular.setEnabled(false);
         }
         
-        btnCalcular.setEnabled(false);
+        
         btnAlterar.setEnabled(false);
         btnExcluir.setEnabled(false);
         txtRgm.setEnabled(true);
