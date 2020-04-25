@@ -224,6 +224,10 @@ public class FormAlunos extends javax.swing.JFrame {
             
             if(resp.equals("OK")){
                 lblMensagem.setText("Aluno incluído com sucesso");
+                txtRgm.setText("");
+                txtNome.setText("");
+                txtNota1.setText("");
+                txtNota2.setText("");
             }else{
                 lblMensagem.setText("" + resp);
             }
